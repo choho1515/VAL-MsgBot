@@ -1,38 +1,24 @@
 "use strict";
 
 module.exports = {
-playerStats: function(username, platform) {
+Contents: function(Token,Id) {
   return {
   method: 'get', 
-  url: "/stats/" + encodeURIComponent(username) + "/" + platform + "/generic"
-  }
-}
-
-operatorStats: function(username, platform) {
-  return {
-  method: 'get', 
-  url: "/stats/" + encodeURIComponent(username) + "/" + platform + "/operators"
-  }
-}
-
-seasonalStats: function(username, platform) {
-  return {
-  method: 'get', 
-  url: "/stats/" + encodeURIComponent(username) + "/" + platform + "/seasonal"
-  }
-}
-
-weaponStats: function(username, platform) {
-  return {
-  method: 'get', 
-  url: "/stats/" + encodeURIComponent(username) + "/" + platform + "/weapons"
-  }
-}
-
-weaponCategoryStats: function(username, platform) {
-  return {
-  method: 'get', 
-  url: "/stats/" + encodeURIComponent(username) + "/" + platform + "/weapon-categories"
+  url: "/val/content/v1/contents",
+  request:{
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36 Edg/94.0.992.31",
+    "Accept-Language": "ko,en;q=0.9,en-US;q=0.8",
+    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Origin": "https://developer.riotgames.com",
+    "X-Riot-Token": Token
+  },
+    header:{
+    "Date": "Mon, 27 Sep 2021 03:00:09 GMT",
+    "Content-Type": "application/json;charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "X-Riot-Edge-Trace-Id": Id
+    }
   }
 }
 }
