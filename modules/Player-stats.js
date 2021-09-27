@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-Contents: function(Token,Id) {
+Contents: function(Token, Id) {
   return {
   method: 'get', 
   url: "/val/content/v1/contents",
